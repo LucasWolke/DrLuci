@@ -9,9 +9,9 @@
   </head>
     <body>
       <h1>
-<img src="doctor4.png"> <img src="drluci2.png"> Welcome to DR.Luci! <img src="drluci3.png"> <img src="doctor5.png">
+<img src="doctor4.png"> Welcome to DR.Luci!  <img src="doctor5.png">
     <br> Can you beat him? </h1> <br>
-    THE <br> <img onclick="start1()" src="ball.png" /> <br> GAME
+    THE <br> <img onclick="start11()" src="ball.png" /> <br> GAME
   <hr>
   <br>
   <br>
@@ -27,15 +27,73 @@
 //Global Variables
 //Deciced its better to declare balls in start1() and give it to start2()!
 //OK added ballsnew
-var balls = 24;
+
+var balls2 = prompt("WITH HOW MANY BALLS DO YOU WANT TO PLAY?:", "0-99");
+var balls = parseInt(balls2);
+
+//Disabled
+if(balls > 99){
+  alert("WHAT ARE YOU TOO FCKING RETARDED TO PUT IN A NUMBER BETWEEN 0 AND 99, YOU MENTALLY DISABLED DEGENERADE. INSTA WIN FOR DR.LUCI THEN");
+  mentalwin();
+
+}
+if(balls < 0){
+  alert("WHAT ARE YOU TOO FCKING RETARDED TO PUT IN A NUMBER BETWEEN 0 AND 99, YOU MENTALLY DISABLED DEGENERADE.INSTA WIN FOR DR.LUCI THEN");
+  mentalwin();
+
+}
+
+var digits = (""+balls).split("");
+var digits2 = digits.pop();
+var earlydel = parseInt(digits2);
+
+if(earlydel == 5) {
+  start1();
+}
+else if(earlydel == 0){
+  start1();
+}
+else if(earlydel > 5){
+  var drluci = earlydel - 5;
+}
+else if(earlydel < 5){
+  var drluci = earlydel;
+}
+document.write("DR.LUCAS TOOK "+drluci+" BALLS!");document.write('<br/>');
+for (i=1; i<=drluci; i++) {
+  document.write('<img src="ballx.png">');
+}
+;document.write('<br/>');
+
+balls = balls - drluci;
+document.write("NOW ONLY "+balls+" BALLS ARE LEFT!");
+document.write('<br/>');
+
+//Autospawning balls to illustrate how many still exist
+
+for (i=1; i<=balls; i++) {
+  document.write('<img src="ball.png">');
+}
+
+if(balls < 1){
+  win();
+}
+else if(balls > 1){
+start1();
+}
+
+
+//}
 
 //Function that starts the game:
 function start1()
 {
-alert("You are playing against the MITHY DR.LUCAS. YOU CAN PICK FROM 1-3 BALLS. THE ONE WHO PICKS THE LAST BALL WINS! AND GUESS WHO THAT IS.("+balls+"BALLS LEFT)");
-var picked = prompt("HOW MANY BALLS DO YOU WANT TO TAKE?:", "1-3");
+
+
+
+var picked = prompt("HOW MANY BALLS DO YOU WANT TO TAKE?:", "1-4");
 var pickedint = parseInt(picked);
-if(pickedint > 3){
+if(pickedint > 4){
   start1();
 }
 else{
@@ -52,19 +110,21 @@ start2(pickedint);
 //Function that makes DR.Lucas' move:
 function start2(pickedint)
 {
-var drluci = 4 - pickedint;
+var drluci = 5 - pickedint;
 document.write("DR.LUCAS TOOK "+drluci+" BALLS!");document.write('<br/>');
 for (i=1; i<=drluci; i++) {
   document.write('<img src="ballx.png">');
 }
-;document.write('<br/>');
+document.write('<br/>');
 
 balls = balls - drluci;
 document.write("NOW ONLY "+balls+" BALLS ARE LEFT!");
 document.write('<br/>');
 //Autospawning balls to illustrate how many still exist
+
 for (i=1; i<=balls; i++) {
   document.write('<img src="ball.png">');
+
 }
 //Autoscroll to bottom for vision
 for (i = 0; i < 1; i++) {
@@ -81,8 +141,15 @@ else{
 }
 //Function that brakes out of the loop to declare the Winner.
 function win(){
-  document.write("DR.LUCAS WINS!, like always. hehe xd")
-  return;
+   document.write("<h1>DR.LUCAS WINS!, like always. hehe xd<br/>")
+
+  for (i=1; i<=1000; i++) {
+    document.write('<img src="troll3.gif">');
+}
+}
+function mentalwin(){
+  alert("THIS TIME I WON CUZ YOU HAVE A MENTAL DISORDER. STOP THE SCRIPT OR CLOSE THIS SITE WITH TASKMANAGER. BOOSTED APE")
+  mentalwin();
 }
 </script>
 </html>

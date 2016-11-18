@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Can you win?</title>
+      <style>
+      body {font-family:"Trebuchet MS"; text-align:center; font-size:1em;}
+      h1 {font-size:2.5em;}
+      </style>
+
+  </head>
+    <body>
+      <h1>
+<img src="doctor4.png"> <img src="drluci2.png"> Welcome to DR.Luci! <img src="drluci3.png"> <img src="doctor5.png">
+    <br> Can you beat him? </h1> <br>
+    THE <br> <img onclick="start1()" src="ball.png" /> <br> GAME
+  <hr>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</body>
+<script>
+
+//Global Variables
+//Deciced its better to declare balls in start1() and give it to start2()!
+//OK added ballsnew
+//var balls1 = prompt("WITH HOW MANY BALLS DO YOU WANT TO PLAY?: (FIRST NUMBER)", "0-50");
+//var balls2 = prompt("WITH HOW MANY BALLS DO YOU WANT TO PLAY?:(SECOND NUMBER)", "0-50");
+//var balls = parseInt(balls1 * 10 + balls2)
+
+var balls1 = prompt("WITH HOW MANY BALLS DO YOU WANT TO PLAY?: (FIRST NUMBER)", "0-50");
+var digits = (""+balls1).split("");
+var digits2 = digits.pop();
+
+alert(digits);
+
+
+</script>
+</html>
