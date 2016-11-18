@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Can you win?</title>
+      <style>
+      body {font-family:"Trebuchet MS"; text-align:center; font-size:1em;}
+      h1 {font-size:2.5em;}
+      </style>
+
+  </head>
+    <body>
+      <h1>
+<img src="doctor4.png"> <img src="drluci2.png"> Welcome to DR.Luci! <img src="drluci3.png"> <img src="doctor5.png">
+    <br> Can you beat him? </h1> <br>
+    THE <br> <img onclick="start1()" src="ball.png" /> <br> GAME
+  <hr>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</body>
+<script>
+
+//Global Variables
+//Deciced its better to declare balls in start1() and give it to start2()!
+//OK added ballsnew
+var balls = 24;
+
+//Function that starts the game:
+function start1()
+{
+alert("You are playing against the MITHY DR.LUCAS. YOU CAN PICK FROM 1-3 BALLS. THE ONE WHO PICKS THE LAST BALL WINS! AND GUESS WHO THAT IS.("+balls+"BALLS LEFT)");
+var picked = prompt("HOW MANY BALLS DO YOU WANT TO TAKE?:", "1-3");
+var pickedint = parseInt(picked);
+if(pickedint > 3){
+  start1();
+}
+else{
+balls = balls - pickedint;
+document.write("YOU TOOK "+pickedint+" BALLS.");document.write('<br/>');
+for (i=1; i<=pickedint; i++) {
+  document.write('<img src="ballx.png">');
+}
+document.write('<br/><br/>');
+start2(pickedint);
+}
+}
+//start1();
+//Function that makes DR.Lucas' move:
+function start2(pickedint)
+{
+var drluci = 4 - pickedint;
+document.write("DR.LUCAS TOOK "+drluci+" BALLS!");document.write('<br/>');
+for (i=1; i<=drluci; i++) {
+  document.write('<img src="ballx.png">');
+}
+;document.write('<br/>');
+
+balls = balls - drluci;
+document.write("NOW ONLY "+balls+" BALLS ARE LEFT!");
+document.write('<br/>');
+//Autospawning balls to illustrate how many still exist
+for (i=1; i<=balls; i++) {
+  document.write('<img src="ball.png">');
+}
+//Autoscroll to bottom for vision
+for (i = 0; i < 1; i++) {
+    window.scroll(0,document.body.offsetHeight);
+}
+
+document.write('<hr><br>')
+if(balls < 1){
+  win();
+}
+else{
+  start1();
+}
+}
+//Function that brakes out of the loop to declare the Winner.
+function win(){
+  document.write("DR.LUCAS WINS!, like always. hehe xd")
+  return;
+}
+</script>
+</html>
